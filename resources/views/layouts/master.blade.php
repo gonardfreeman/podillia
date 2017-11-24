@@ -10,7 +10,10 @@
 </head>
 <body>
     @include ('layouts.includes.header')
-    @yield ('content')
+    <div class="wrapper">
+        @yield ('content')
+    </div>
+
     <script async src="/js/index.js"></script>
 </body>
 </html>
