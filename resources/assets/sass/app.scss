@@ -1,7 +1,6 @@
 //normilize
 @import "vendor/normilize";
 
-
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
@@ -10,5 +9,9 @@
 
 //includes
 @import "_header";
-
+@import "footer";
 @import "main";
+@import "buttons";
+
+//pages
+@import "main_page";

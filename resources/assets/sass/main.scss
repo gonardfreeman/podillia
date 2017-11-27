@@ -1,8 +1,10 @@
 html, body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
+  color: #2a2a2a;
 }
-.wrapper {
-  display: flex;
-  width: 1200px;
-  margin: 0 auto;
+a {
+  color: #42cab7;
+  &:hover {
+    color: #51b5a7;
+  }
 }
