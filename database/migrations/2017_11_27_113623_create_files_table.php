@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMenusTable extends Migration
+class CreateFilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,16 @@ class CreateMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('files', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('post_id')->unsigned();;
+            $table->string('heading');
             $table->string('name');
-            $table->integer('position')->unique();
-            $table->boolean('visible');
-            $table->string('link')->unique();
+            $table->boolean('active');
             $table->timestamps();
+        });
+        Schema::table('files', function (Blueprint $table) {
+            $table->foreign('post_id')->references('id')->on('posts');
         });
     }
 
@@ -30,6 +33,6 @@ class CreateMenusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('files');
     }
 }

@@ -9,9 +9,8 @@
                     <div class="blog-post">
                         <h2 class="blog-post-title">{{$post->heading}}</h2>
                         <p class="blog-post-meta">{{$post->updated_at}} by <a href="#">{{$post->author}}</a></p>
-                        <p>{{$post->short_body}}</p>
-                         {{--TODO add unique to links!!!! --}}
-                        <a href="/posts/{{$post->link}}">...читати повністю</a>
+                        <p>{{str_limit($post->body, $limit = 5, $end = '...')}} <a href="/posts/{{$post->link}}">читати повністю</a></p>
+
                     </div>
                 @endforeach
 

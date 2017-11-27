@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Menu;
+use App\Files;
 
 class MainController extends Controller
 {
@@ -23,8 +24,10 @@ class MainController extends Controller
 
     public function post($post)
     {
-        $post = Post::where('link', '=', $post)->get();
-        return $post;
+        $menus = $this->menus;
+        $post = Post::where('link', '=', $post)->first();
+        $files = Files::where('post_id', '=', $post->id)->where('active','=',true)->get();
+        return view('pages.post', compact('post', 'menus', 'files'));
     }
 
     public function contacts()

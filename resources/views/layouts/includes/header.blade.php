@@ -5,9 +5,8 @@
             <span>Поділля</span>
         </a>
         <nav class="nav blog-nav">
-            <a href="/" class="nav-link">На головну</a>
             @foreach ($menus as $menu)
-                <a class="nav-link" href="{{$menu->link}}">{{$menu->name}}</a>
+                <a class="nav-link" href="/{{$menu->link}}">{{$menu->name}}</a>
             @endforeach
         </nav>
     </div>

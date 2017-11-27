@@ -16,14 +16,13 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->text('body');
-            $table->text('short_body');
             $table->string('heading');
-            $table->string('filename');
             $table->boolean('visible');
-            $table->string('link');
+            $table->string('link')->unique();
             $table->string('author');
             $table->timestamps();
         });
+
     }
 
     /**
