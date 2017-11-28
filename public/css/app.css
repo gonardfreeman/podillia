@@ -635,6 +635,24 @@ a:hover {
   border-color: #42cab7;
 }
 
+.btn-outline-primary.disabled,
+.btn-outline-primary:disabled {
+  color: #ccc;
+  border-color: #ccc;
+}
+
+.btn-outline-primary.active,
+.btn-outline-primary:active {
+  background-color: #42cab7;
+  border-color: #42cab7;
+}
+
+.btn-outline-primary:focus,
+.btn-outline-primary.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(66, 202, 183, 0.5);
+  box-shadow: 0 0 0 2px rgba(66, 202, 183, 0.5);
+}
+
 /*
  * Blog name and description
  */

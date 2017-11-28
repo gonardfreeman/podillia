@@ -8,6 +8,7 @@
             @foreach ($menus as $menu)
                 <a class="nav-link" href="/{{$menu->link}}">{{$menu->name}}</a>
             @endforeach
+            <a class="nav-link"  href="{{ route('login') }}">Увійти</a>
         </nav>
     </div>
 </div>

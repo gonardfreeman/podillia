@@ -9,14 +9,14 @@
                     <div class="blog-post">
                         <h2 class="blog-post-title">{{$post->heading}}</h2>
                         <p class="blog-post-meta">{{$post->updated_at}} by <a href="#">{{$post->author}}</a></p>
-                        <p>{{str_limit($post->body, $limit = 5, $end = '...')}} <a href="/posts/{{$post->link}}">читати повністю</a></p>
+                        <p>{{str_limit($post->body, $limit = 50, $end = '...')}} <a href="/posts/{{$post->link}}">читати повністю</a></p>
 
                     </div>
                 @endforeach
 
                 <nav class="blog-pagination">
-                    <a class="btn btn-outline-primary" href="#">Older</a>
-                    <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+                    <a class="btn btn-outline-primary {{!$posts->hasMorePages() ? "disabled":""}}" href="{{$posts->nextPageUrl()}}">Назад</a>
+                    <a class="btn btn-outline-primary {{$posts->currentPage() == 1 ? "disabled" : ""}}" href="{{$posts->previousPageUrl()}}">Вперед</a>
                 </nav>
 
             </div><!-- /.blog-main -->

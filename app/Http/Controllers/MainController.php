@@ -17,7 +17,7 @@ class MainController extends Controller
 
     public function index()
     {
-        $posts = Post::where('visible', '=', true)->latest()->get();
+        $posts = Post::where('visible', '=', true)->latest()->simplePaginate(2);
         $menus = $this->menus;
         return view('pages.index', compact('menus', 'posts'));
     }

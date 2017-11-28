@@ -7,6 +7,7 @@
                     <h2 class="blog-post-title">{{$post->heading}}</h2>
                     <p class="blog-post-meta">{{$post->updated_at}} by <a href="#">{{$post->author}}</a></p>
                     <p>{{$post->body}}</p>
+                    @if (count($files) > 0)
                     <div class="related-files">
                         <h3>Пов'язані файли:</h3>
                         <ol class="files">
@@ -17,6 +18,7 @@
                             @endforeach
                         </ol>
                     </div>
+                    @endif
                     <!-- /.related-files -->
                     <!-- /.blog-post-meta -->
                     <!-- /.blog-post-title -->

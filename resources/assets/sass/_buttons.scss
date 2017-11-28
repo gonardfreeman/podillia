@@ -6,4 +6,17 @@
     background-color: #42cab7;
     border-color: #42cab7;
   }
+  &.disabled, &:disabled {
+    color: #ccc;
+    border-color: #ccc;
+  }
+  &.active, &:active {
+    background-color: #42cab7;
+    border-color: #42cab7;
+  }
+  &:focus, &.focus {
+    -webkit-box-shadow: 0 0 0 2px rgba(66,202,183,.5);
+    box-shadow: 0 0 0 2px rgba(66,202,183,.5);
+  }
 }
+
